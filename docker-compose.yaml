@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+
+  zipkin:
+    image: openzipkin/zipkin-slim:2.24
+    ports:
+      - 9411:9411
+
+  mq:
+    image: icr.io/ibm-messaging/mq:9.3.0.0-r2
+    ports:
+      - 1414:1414
+      - 9443:9443
+    environment:
+      LICENSE: accept
+      MQ_QMGR_NAME: QM1
