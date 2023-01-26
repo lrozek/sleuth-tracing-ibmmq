@@ -25,3 +25,12 @@ services:
     depends_on:
       - mq
       - zipkin
+
+  consumer:
+    build: consumer
+    environment:
+      - IBM_MQ_CONNNAME=mq(1414)
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411/
+    depends_on:
+      - mq
+      - zipkin
