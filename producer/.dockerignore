@@ -1,0 +1,8 @@
+# Ignore everything
+**
+
+# what is allowed
+!src
+!pom.xml
+!mvnw
+!.mvn

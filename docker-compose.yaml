@@ -14,3 +14,14 @@ services:
     environment:
       LICENSE: accept
       MQ_QMGR_NAME: QM1
+
+  producer:
+    build: producer
+    ports:
+      - 8081:8080
+    environment:
+      - IBM_MQ_CONNNAME=mq(1414)
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411/
+    depends_on:
+      - mq
+      - zipkin
